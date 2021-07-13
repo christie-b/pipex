@@ -6,7 +6,7 @@
 /*   By: cboutier <cboutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 16:18:11 by cboutier          #+#    #+#             */
-/*   Updated: 2021/07/09 17:44:36 by cboutier         ###   ########.fr       */
+/*   Updated: 2021/07/13 10:33:28 by cboutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,27 +33,9 @@ void	ft_putstr_fd(char *s, int fd)
 		return ;
 	while (s[i])
 	{
-		write(fd, &s[i], 1);
+		write(fd, &(s[i]), 1);
 		i++;
 	}
-}
-
-char	*ft_strchr(const char *str, int c)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if ((char)c == str[i])
-		{
-			return ((char *)(str + i));
-		}
-		i++;
-	}
-	if (c == 0)
-		return ((char *)(str + i));
-	return (0);
 }
 
 char	*ft_strdup(char *s)
@@ -84,4 +66,22 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	if (n == 0)
 		return (0);
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}
+
+char	*ft_strchr(const char *str, int c)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if ((char)c == str[i])
+		{
+			return ((char *)(str + i));
+		}
+		i++;
+	}
+	if (c == 0)
+		return ((char *)(str + i));
+	return (0);
 }
