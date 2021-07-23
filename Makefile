@@ -6,7 +6,7 @@
 #    By: cboutier <cboutier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/09 14:10:47 by cboutier          #+#    #+#              #
-#    Updated: 2021/07/13 11:32:44 by cboutier         ###   ########.fr        #
+#    Updated: 2021/07/17 16:15:49 by cboutier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ DIR	= .
 
 SRCS	=	pipex.c pipex_utils.c \
 			pipex_utils2.c exec.c \
-			ft_split.c paths.c ft_strjoin.c
+			ft_split.c paths.c ft_strjoin.c \
+			ft_free.c
 
 
 OBJS	= ${SRCS:.c=.o}

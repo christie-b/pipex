@@ -6,7 +6,7 @@
 /*   By: cboutier <cboutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 15:06:30 by cboutier          #+#    #+#             */
-/*   Updated: 2021/07/13 10:04:31 by cboutier         ###   ########.fr       */
+/*   Updated: 2021/07/20 14:45:27 by cboutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 # include <errno.h>
 # include <string.h>
 # include <sys/wait.h>
-# include <stdio.h>
 
 typedef struct s_cmds
 {
@@ -49,13 +48,15 @@ int		print_ret_err(int error, int i, t_cmds *cmds);
 void	exec1(t_cmds *cmds, int *pfd, char **envp);
 void	exec2(t_cmds *cmds, int *pfd, char **envp);
 char	**ft_get_path(char **envp);
-void	check_path1(char **envp, t_cmds *cmds);
-void	check_path2(char **envp, t_cmds *cmds);
+int		check_path1(char **envp, t_cmds *cmds);
+int		check_path2(char **envp, t_cmds *cmds);
 char	*ft_strdup(char *s);
-void	ft_free_tab(char **tab);
+int		ft_free_tab(char **tab);
 void	ft_free_cmds(t_cmds *cmds);
+void	print_errno(char *s_cmds);
 pid_t	fork_pid1(t_cmds *cmds, int *pfd, char **envp);
 pid_t	fork_pid2(t_cmds *cmds, int *pfd, char **envp);
-void	check_path(char **envp, t_cmds *cmds);
+int		print_file_error(char *s_cmds);
+void	print_cmd_error(char *s_cmds);
 
 #endif

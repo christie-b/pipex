@@ -6,7 +6,7 @@
 /*   By: cboutier <cboutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 16:18:11 by cboutier          #+#    #+#             */
-/*   Updated: 2021/07/13 10:33:28 by cboutier         ###   ########.fr       */
+/*   Updated: 2021/07/14 10:52:12 by cboutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ char	*ft_strchr(const char *str, int c)
 	int	i;
 
 	i = 0;
+	if (!str)
+		return (0);
 	while (str[i])
 	{
 		if ((char)c == str[i])
